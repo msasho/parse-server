@@ -1,21 +1,21 @@
-   version: '3.8'
+version: '3.8'
 
-   services:
-     parse-server:
-       build:
-         context: .
-         dockerfile: ./Dockerfile
-       environment:
-         - PARSE_SERVER_APPLICATION_ID=myAppId
-         - PARSE_SERVER_MASTER_KEY=myMasterKey
-         - PARSE_SERVER_DATABASE_URI=mongodb://mongo:27017/dev
-         - PARSE_SERVER_URL=http://localhost:1337/parse
-       ports:
-         - "1337:1337"
-       depends_on:
-         - mongo
+services:
+  parse-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - PARSE_SERVER_APPLICATION_ID=myAppId
+      - PARSE_SERVER_MASTER_KEY=myMasterKey
+      - PARSE_SERVER_DATABASE_URI=mongodb://mongo:27017/dev
+      - PARSE_SERVER_URL=http://localhost:1337/parse
+    ports:
+      - '1337:1337'
+    depends_on:
+      - mongo
 
-     mongo:
-       image: mongo
-       ports:
-         - "27017:27017"
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
