@@ -10,6 +10,7 @@ services:
       - PARSE_SERVER_MASTER_KEY=myMasterKey
       - PARSE_SERVER_DATABASE_URI=mongodb://mongo:27017/dev
       - PARSE_SERVER_URL=http://localhost:1337/parse
+      - PARSE_SERVER_MASTER_KEY_IPS=172.22.0.1
     ports:
       - '1337:1337'
     depends_on:
